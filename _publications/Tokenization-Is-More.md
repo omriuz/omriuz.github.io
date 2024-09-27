@@ -3,11 +3,11 @@ title: "Tokenization Is More Than Compression"
 authors_1: "Craig W. Schmidt, Varshini Reddy, Haoran Zhang, Alec Alameddine, "
 authors_2: "Yuval Pinter, Chris Tanner"
 collection: publications
-category: Preprints
+category: conferences
 permalink: /publication/Tokenization-Is-More
 # excerpt: 'This paper is about the number 2. The number 3 is left for future work.'
-# date: 2024-04-28
-# venue: 'Journal 1'
+date: 2024-04-28
+venue: 'EMNLP main'
 # slidesurl: 'http://academicpages.github.io/files/slides2.pdf'
 paperurl: 'https://arxiv.org/abs/2402.18376'
 authors: 'Craig W. Schmidt, Varshini Reddy, Haoran Zhang, Alec Alameddine, Omri Uzan, Yuval Pinter, Chris Tanner'
