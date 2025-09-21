@@ -56,7 +56,7 @@
                     <!-- and part of the <a href="https://nlp.stanford.edu/" target="_blank">Stanford NLP Group</a>. -->
                     <!-- Currently I'm working with <a href="https://stanford.edu/~cgpotts/" target="_blank">Chris Potts</a> and <a href="https://douwekiela.github.io/" target="_blank">Douwe Kiela</a> on multimodal RAG problems. -->
                     <br><br>
-                    Before Stanford, I was a software engineer at Meta and worked primarily on server side optimizations for mobile web interfaces for Facebook and Instagram, and on semantic retrieval of content for SEO.
+                    Before Stanford, I was a software engineer at Meta and worked primarily on server side optimizations for mobile web interfaces, and on semantic retrieval of content for SEO.
                     I also spent a summer at IBM Research, doing work on improved methods for visual document retrieval.
                     <br><br>
                     I completed my B.Sc. and M.Sc. in Computer Science at Ben-Gurion University, advised by <a href="https://www.cs.bgu.ac.il/~pintery/">Yuval Pinter</a>.
@@ -66,6 +66,59 @@
                     <br><br>
                     If you have any thoughts or comments about work that I've published, please feel free to reach out!
                   </p>
+
+                  <a href="#" id="show-pronunciation">Pronunciation</a>
+
+<template id="pronounce-template">
+  <div class="name-pronounce" style="font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; display: inline-flex; align-items: center; gap: .5rem; padding: .5rem .75rem; border: 1px solid #e5e7eb; border-radius: .75rem;">
+    <div>
+      <div style="font-size: .9rem; opacity: .85;">
+        <span title="English approximation">ohm-REE YOO-zahn</span>
+      </div>
+    </div>
+    <button id="play-name" aria-label="Play pronunciation" style="border: 0; background: #f3f4f6; padding: .4rem; border-radius: .5rem; cursor: pointer; display: inline-flex; align-items: center;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+    </button>
+    <audio id="name-audio"></audio>
+    <div>but every approximation is welcome:)</div>
+  </div>
+  
+</template>
+
+<script>
+(function() {
+  const trigger = document.getElementById('show-pronunciation');
+  const tpl = document.getElementById('pronounce-template');
+
+  trigger.addEventListener('click', function(e) {
+    e.preventDefault();
+    const node = tpl.content.firstElementChild.cloneNode(true);
+    // insert right after the word
+    trigger.insertAdjacentElement('afterend', node);
+    // optional: remove the link after inserting
+    trigger.remove();
+
+    // wire up your original play logic
+    const btn = node.querySelector('#play-name');
+    const audio = node.querySelector('#name-audio');
+    const text = 'Omri Yoo-zahn';
+
+    btn.addEventListener('click', () => {
+      if (audio && audio.querySelector('source')) {
+        audio.currentTime = 0;
+        audio.play();
+        return;
+      }
+      const synth = window.speechSynthesis;
+      if (!synth) return;
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'en-US';
+      u.rate = 0.95;
+      synth.speak(u);
+    });
+  });
+})();
+</script>
                                
                 <p style="text-align:center">
                   <a href="mailto:uzan.omri@gmail.com" target="_blank">Email</a> &nbsp;/&nbsp;
