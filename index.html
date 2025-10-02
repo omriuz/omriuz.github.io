@@ -1,257 +1,449 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Omri Uzan</title>
 
-    <title>Omri Uzan</title>
+  <!-- Meta -->
+  <meta name="author" content="Omri Uzan" />
+  <meta name="description" content="Omri Uzan, Ph.D. student at Stanford University. Research in NLP, retrieval, multimodality, evaluation, and tokenization." />
+  <meta name="keywords" content="Omri Uzan, NLP, Natural Language Processing, Retrieval, Multimodal, Tokenization, Stanford" />
 
-    <meta name="author" content="Omri Uzan">
-    <meta name="description" content="Omri Uzan's personal website showcasing research, publications, projects, and academic achievements in the field of Natural Language Processing and Machine Learning.">
-    <meta name="keywords" content="Omri Uzan, NLP, Natural Language Processing, Research, Publications, Multilinguality, Low-Resource Languages, AI, Representation Learning">
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Omri Uzan" />
+  <meta property="og:description" content="Research in Natural Language Processing and Machine Learning." />
+  <meta property="og:url" content="https://omriuz.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Omri Uzan" />
+  <meta name="twitter:description" content="Research in NLP, retrieval, multimodality, evaluation, tokenization." />
+  <meta name="twitter:image" content="images/og-image.png" />
 
-    <meta property="og:title" content="Omri Uzan">
-    <meta property="og:description" content="Explore Omri Uzan's research work, publications, and projects in NLP.">
-    <meta property="og:image" content="images/og-image.png">
-    <meta property="og:url" content="https://omriuz.github.io/">
-    <meta property="og:type" content="website">
-    
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Omri Uzan">
-    <meta name="twitter:description" content="Discover Omri Uzan's work in Natural Language Processing, including research, awards, and projects.">
-    <meta name="twitter:image" content="images/og-image.png">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png" />
+  <link rel="shortcut icon" href="images/favicon/favicon.ico" />
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" href="images/favicon/favicon-16x16.png" sizes="16x16">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --border: #e2e8f0;
+      --accent: #1d4ed8;
+      --accent-ink: #ffffff;
+      --card: #f8fafc;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b1020;
+        --text: #e6edf6;
+        --muted: #96a1b3;
+        --border: #1f2a44;
+        --accent: #60a5fa;
+        --accent-ink: #0b1020;
+        --card: #0f172a;
+      }
+    }
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    .wrap {
+      max-width: 1100px;
+      margin-inline: auto;
+      padding: 32px 20px 56px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 32px;
+    }
 
-    <!-- Additional Resources -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    /* Sidebar (static, no box) */
+    aside {
+      align-self: start;
+      padding: 0;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+    }
 
+    .photo {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      display: block;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(26px, 3vw, 32px);
+      margin: 6px 0 2px;
+      letter-spacing: -0.01em;
+    }
+    .role { color: var(--muted); font-size: 15px; }
+
+    .contact {
+      margin-top: 14px;
+      display: grid;
+      gap: 8px;
+      font-size: 15px;
+    }
+    .contact a { color: var(--text); text-decoration: none; }
+    .contact a:hover { color: var(--accent); }
+
+    .social {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      margin-top: 16px;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--border);
+      padding: 6px 10px;
+      border-radius: 999px;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 14px;
+    }
+    .chip:hover { border-color: var(--accent); color: var(--accent); }
+    .chip .icon { width: 16px; height: 16px; flex: 0 0 16px; }
+
+    /* Main */
+    main { min-width: 0; }
+    section { margin-bottom: 40px; }
+    section h2 {
+      font-size: 20px;
+      margin: 0 0 10px;
+      letter-spacing: .01em;
+    }
+    .muted { color: var(--muted); }
+    p { margin: 10px 0; }
+
+    /* Publications */
+    .publist { list-style: none; padding: 0; margin: 4px 0 0; }
+    .publist li {
+      display: grid;
+      grid-template-columns: 140px 1fr; /* was 112px */
+      gap: 18px;
+      padding: 18px 0; /* slightly larger row height */
+      border-bottom: 1px solid var(--border);
+    }
+    .thumb-box {
+      width: 140px;  /* was 112px */
+      height: 140px; /* was 112px */
+      border-radius: 12px; /* slightly bigger rounding */
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #fff;
+    }
+    .thumb { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .p-title { font-weight: 650; }
+    .authors { margin-top: 2px; }
+    .venue { margin-top: 2px; font-weight: 600; }
+    .links { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 10px; }
+    .link { color: var(--accent); text-decoration: none; font-weight: 600; }
+    .link:hover { text-decoration: underline; }
+
+    /* Emoji icons for colored logos */
+    .link.icon { display: inline-flex; align-items: center; gap: 6px; }
+    .link .emoji { font-size: 16px; line-height: 1; display: inline-block; transform: translateY(1px); }
+
+    .tag { display: inline-block; background: var(--card); border: 1px solid var(--border); padding: 2px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+
+    /* News */
+    .news { list-style: none; padding: 0; margin: 4px 0 0; }
+    .news li { padding: 10px 0; border-bottom: 1px dashed var(--border); }
+    .news time { font-weight: 600; margin-right: 8px; white-space: nowrap; }
+
+    /* Footer */
+    footer { color: var(--muted); font-size: 13px; margin-top: 28px; }
+
+    /* Mobile */
+    @media (max-width: 880px) {
+      .wrap { grid-template-columns: 1fr; }
+      .publist li { grid-template-columns: 96px 1fr; } /* was 80px */
+      .thumb-box { width: 96px; height: 96px; }       /* was 80px */
+    }
+
+    /* Photo wrapper + slight left shift (unchanged) */
+    .photo-wrap{
+      position:relative;
+      width:100%;
+      border:1px solid var(--border);
+      border-radius:14px;
+      overflow:hidden;
+      background:#fff;
+      margin-bottom:14px;
+    }
+    .photo-wrap::before{content:"";display:block;padding-top:100%;}
+    .photo-wrap .photo{
+      position:absolute;inset:0;width:100%;height:100%;
+      object-fit:cover;
+      object-position: 48% 0%; /* tiny nudge left */
+      border:0;margin:0;
+    }
+
+    /* Colored award tags */
+    .tag-oral{background:#e0f2fe;border-color:#bae6fd;color:#075985;}
+    .tag-award{background:#fef08a;border-color:#fde047;color:#854d0e;}
+    .tag-sac{background:#fef08a;border-color:#fde047;color:#854d0e;}
+
+
+    /* Publication link layout (anchor stays a row) */
+    .links a.link { 
+      display: inline-flex; 
+      align-items: center; 
+      gap: 6px; 
+    }
+
+    /* Size ONLY the SVG inside the link, not the anchor */
+    .links a.link .icon { 
+      width: 16px; 
+      height: 16px; 
+      flex: 0 0 16px; 
+      display: block; 
+    }
+
+    /* Emoji baseline nudge */
+    .links a.link .emoji { 
+      display: inline-block; 
+      line-height: 1; 
+      transform: translateY(1px); 
+    }
+
+    .social use[href="#i-github"],
+    .social use[xlink\:href="#i-github"] { color: #181717; }  /* GitHub brand black */
+
+    .social use[href="#i-linkedin"],
+    .social use[xlink\:href="#i-linkedin"] { color: #0A66C2; } /* LinkedIn blue */
+
+    .social use[href="#i-gscholar-hat"],
+    .social use[xlink\:href="#i-gscholar-hat"] { color: #1A73E8; } /* Google blue */
+
+  </style>
 </head>
 
+<body>
+  <!-- Inline SVG sprite (kept for left-side logos and paper icon) -->
+   <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    style="position:absolute;width:0;height:0;overflow:hidden">
+    <!-- GitHub -->
+    <symbol id="i-github" viewBox="0 0 16 16">
+      <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+    </symbol>
+    <!-- X -->
+    <symbol id="i-x" viewBox="0 0 24 24">
+      <path d="M3 3l18 18M21 3 3 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <!-- LinkedIn -->
+    <symbol id="i-linkedin" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 0 0 5.001 2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM10 9h3.8v1.8h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.09V21h-4v-5.3c0-1.26-.02-2.88-1.76-2.88-1.76 0-2.03 1.37-2.03 2.78V21h-4z"/>
+    </symbol>
+    <!-- Scholar (book) -->
+    <symbol id="i-scholar" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 1-2-2V5zm2 0v12h10V5H6zm-2 14h14v2H4z"/>
+    </symbol>
+    <!-- Paper (document) -->
+    <symbol id="i-paper" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12V8l-4-6zm0 2 2.5 3H14V4zM7 9h7v2H7V9zm0 4h10v2H7v-2zm0 4h10v2H7v-2z"/>
+    </symbol>
+    <symbol id="i-x-logo" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M2.7 2h5.1l4.5 6.1L17.8 2h3.5l-7 8.7L22 22h-5.1l-4.9-6.6L6 22H2.5l7.5-9.3L2.7 2z"/>
+    </symbol>
 
-  <body>
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr style="padding:0px">
-              <td style="padding:2.5%;width:63%;vertical-align:middle">
-                <p class="name" style="text-align: center;">
-                  Omri Uzan
-                </p>
-                <p>
-                  <p>
-                    I'm a first-year Computer Science Ph.D. student at Stanford University.
-                    <!-- and part of the <a href="https://nlp.stanford.edu/" target="_blank">Stanford NLP Group</a>. -->
-                    <!-- Currently I'm working with <a href="https://stanford.edu/~cgpotts/" target="_blank">Chris Potts</a> and <a href="https://douwekiela.github.io/" target="_blank">Douwe Kiela</a> on multimodal RAG problems. -->
-                    <br><br>
-                    Before Stanford, I was a software engineer at Meta and worked primarily on server side optimizations for mobile web interfaces, and on semantic retrieval of content for SEO.
-                    I also spent a summer at IBM Research, doing work on improved methods for visual document retrieval.
-                    <br><br>
-                    I completed my B.Sc. and M.Sc. in Computer Science at Ben-Gurion University, advised by <a href="https://www.cs.bgu.ac.il/~pintery/">Yuval Pinter</a>.
-                  </p>
-                  <p>
-                    My interests are broad within deep learning and natural language processing. My past work revolved around neural information retrieval, multimodality, evaluation, and tokenization.
-                    <br><br>
-                    If you have any thoughts or comments about work that I've published, please feel free to reach out!
-                  </p>
+    <symbol id="i-google" viewBox="0 0 24 24">
+      <path fill="#4285F4" d="M23.49 12.27c0-.85-.08-1.67-.24-2.45H12v4.64h6.44c-.28 1.5-1.1 2.77-2.34 3.62v3h3.78c2.21-2.04 3.61-5.04 3.61-8.81z"/>
+      <path fill="#34A853" d="M12 24c3.24 0 5.96-1.08 7.95-2.92l-3.78-3c-1.05.7-2.39 1.12-4.17 1.12-3.21 0-5.94-2.16-6.92-5.06H1.2v3.18C3.18 21.53 7.26 24 12 24z"/>
+      <path fill="#FBBC05" d="M5.08 14.14c-.24-.7-.38-1.46-.38-2.24s.14-1.54.38-2.24V6.48H1.2C.44 8.02 0 9.76 0 11.9s.44 3.88 1.2 5.42l3.88-3.18z"/>
+      <path fill="#EA4335" d="M12 4.74c1.76 0 3.34.6 4.59 1.78l3.43-3.43C17.95 1.14 15.24 0 12 0 7.26 0 3.18 2.47 1.2 6.48l3.88 3.18C6.06 6.74 8.79 4.74 12 4.74z"/>
+    </symbol>
 
-                  <!-- <a href="#" id="show-pronunciation">Pronunciation</a> -->
+    <symbol id="i-gscholar-hat" viewBox="0 0 24 24">
+      <!-- cap -->
+      <path fill="currentColor" d="M12 3 1.5 9 12 15 22.5 9 12 3z"/>
+      <!-- tassel string -->
+      <path d="M19.5 10.2V14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <!-- tassel -->
+      <circle cx="19.5" cy="16" r="1.2" fill="currentColor"/>
+      <!-- base (head band) -->
+      <path fill="currentColor" d="M6.5 12.6V16c0 1.9 3 3.5 5.5 3.5S17.5 17.9 17.5 16v-3.4L12 15.7l-5.5-3.1z"/>
+    </symbol>
 
-<template id="pronounce-template">
-  <div class="name-pronounce" style="font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; display: inline-flex; align-items: center; gap: .5rem; padding: .5rem .75rem; border: 1px solid #e5e7eb; border-radius: .75rem;">
-    <div>
-      <div style="font-size: .9rem; opacity: .85;">
-        <span title="English approximation">ohm-REE YOO-zahn</span>
+  </svg>
+
+  <div class="wrap" itemscope itemtype="https://schema.org/Person">
+    <aside>
+      <div class="photo-wrap">
+        <img class="photo" src="images/profile.jpeg"
+             alt="Portrait of Omri Uzan" itemprop="image"
+             width="560" height="560" loading="eager" decoding="async" fetchpriority="high"/>
       </div>
-    </div>
-    <button id="play-name" aria-label="Play pronunciation" style="border: 0; background: #f3f4f6; padding: .4rem; border-radius: .5rem; cursor: pointer; display: inline-flex; align-items: center;">
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-    </button>
-    <audio id="name-audio"></audio>
-    <div>but every approximation is welcome:)</div>
-  </div>
-  
-</template>
+      <h1 itemprop="name">Omri Uzan</h1>
+      <div class="role">Ph.D. student, Stanford University</div>
+      <div class="contact" itemprop="contactPoint" itemscope itemtype="https://schema.org/ContactPoint">
+        <div>Email: <a href="mailto:uzan.omri@gmail.com" itemprop="email">uzan.omri@gmail.com</a></div>
+      </div>
+      <div class="social">
+        <a class="chip" href="https://x.com/omri_uzan/" target="_blank" rel="noopener" aria-label="X">
+          <svg class="icon" aria-hidden="true"><use href="#i-x-logo" xlink:href="#i-x-logo"></use></svg>
+        </a>
+        <a class="chip" href="https://scholar.google.co.il/citations?user=uJvNbkYAAAAJ&hl=en"
+        target="_blank" rel="noopener" aria-label="Google Scholar">
+       <svg class="icon" aria-hidden="true">
+         <use href="#i-gscholar-hat" xlink:href="#i-gscholar-hat"></use>
+       </svg>
+     </a>
+        <a class="chip" href="https://github.com/omriuz/" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg class="icon" aria-hidden="true"><use href="#i-github" xlink:href="#i-github"></use></svg>
+        </a>
+        <a class="chip" href="https://www.linkedin.com/in/omri-uzan-64a6021b0/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg class="icon" aria-hidden="true"><use href="#i-linkedin" xlink:href="#i-linkedin"></use></svg>
+        </a>
+      </div>
+      
+    </aside>
 
-<script>
-(function() {
-  const trigger = document.getElementById('show-pronunciation');
-  const tpl = document.getElementById('pronounce-template');
+    <main>
+      <section id="about">
+        <h2>About</h2>
+        <p>
+          I am a first-year Ph.D. student in Computer Science at Stanford University. I am currently working <a href="https://stanford.edu/~cgpotts/" class="link" target="_blank" rel="noopener">Chris Potts</a> and <a href="https://douwekiela.github.io/" class="link" target="_blank" rel="noopener">Douwe Kiela</a>.
+        </p>
+        <p>
+          Before Stanford, I was a software engineer at Meta, where I worked on server-side optimizations for mobile web interfaces and on semantic retrieval for SEO applications. I also spent a summer at IBM Research, working on improved methods for multimodal retrieval.
+        </p>
+        <p>
+          I completed my B.Sc. and M.Sc. in Computer Science at Ben-Gurion University, and I am grateful to have been advised by <a href="https://www.cs.bgu.ac.il/~pintery/" target="_blank" rel="noopener" class="link">Yuval Pinter</a>.
+        </p>
+      </section>
 
-  trigger.addEventListener('click', function(e) {
-    e.preventDefault();
-    const node = tpl.content.firstElementChild.cloneNode(true);
-    // insert right after the word
-    trigger.insertAdjacentElement('afterend', node);
-    // optional: remove the link after inserting
-    trigger.remove();
+      <section id="publications">
+        <h2>Selected Papers</h2>
 
-    // wire up your original play logic
-    const btn = node.querySelector('#play-name');
-    const audio = node.querySelector('#name-audio');
-    const text = 'Omri Yoo-zahn';
+        <h3 class="muted">2025</h3>
+        <ul class="publist">
+          <li>
+            <div class="thumb-box">
+              <img class="thumb"
+                   src="images/GQR.png"
+                   alt="Guided Query Refinement thumbnail"
+                   width="280" height="280" loading="lazy" decoding="async" />
+            </div>
+            <div>
+              <div class="p-title">Guided Query Refinement: Multimodal Hybrid Retrieval with Test-Time Optimization</div>
+              <br>
+              <div class="authors"><strong>Omri Uzan</strong>, Asaf Yehudai, Roi Pony, Eyal Shnarch, Ariel Gera</div>
+              <div class="venue"><em>Preprint</em>, 2025</div>
+              <div class="links">
+                <!-- <a class="link icon" href="https://arxiv.org/abs/XXXX.YYYYY" target="_blank" rel="noopener"><svg class="icon"><use href="#i-paper"></use></svg><span>paper</span></a> -->
+                <!-- Colored emoji versions for code/data when live: -->
+                <!-- <a class="link icon" href="https://github.com/omriuz/GQR" target="_blank" rel="noopener"><span class="emoji" aria-hidden="true">🐙</span><span>code</span></a> -->
+                <!-- <a class="link icon" href="https://huggingface.co/datasets/omriuz/GQR" target="_blank" rel="noopener"><span class="emoji" aria-hidden="true">🤗</span><span>data</span></a> -->
+              </div>
+            </div>
+          </li>
 
-    btn.addEventListener('click', () => {
-      if (audio && audio.querySelector('source')) {
-        audio.currentTime = 0;
-        audio.play();
-        return;
-      }
-      const synth = window.speechSynthesis;
-      if (!synth) return;
-      const u = new SpeechSynthesisUtterance(text);
-      u.lang = 'en-US';
-      u.rate = 0.95;
-      synth.speak(u);
-    });
-  });
-})();
-</script>
-                               
-                <p style="text-align:center">
-                  <a href="mailto:uzan.omri@gmail.com" target="_blank">Email</a> &nbsp;/&nbsp;
-                  <!-- <a href="data/cv.pdf">CV</a> &nbsp;/&nbsp; -->
-                  <a href="https://scholar.google.co.il/citations?user=uJvNbkYAAAAJ&hl=en" target="_blank">Scholar</a> &nbsp;/&nbsp;
-                  <a href="https://x.com/omri_uzan/" target="_blank">X</a> &nbsp;/&nbsp;
-                  <a href="https://github.com/omriuz/" target="_blank">Github</a>&nbsp;/&nbsp;
-                  <a href="https://www.linkedin.com/in/omri-uzan-64a6021b0/" target="_blank">Linkedin</a>
-                </p>
-              </td>
-              <td style="padding:2.5%;width:40%;max-width:40%">
-                <img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/profile_picture.png" class="hoverZoomLink">
-              </td>
-            </tr>
-          </tbody></table>
-
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>            
-            <h2>Selected Publications</h2>
-            <br>
-            <tr>
-              <td style="padding:20px;width:25%;vertical-align:middle">
-                <div class="one">
-                  <t/><img src='images/charbench1.png' width="160" height="160">
-                </div>
-              </td>
-              <td style="padding:20px;width:75%;vertical-align:middle">
-                <a href="https://arxiv.org/abs/2508.02591/" target="_blank">
-              <span class="papertitle">CharBench: Evaluating the Role of Tokenization in Character-Level Tasks
-        </span>
+          <li>
+            <div class="thumb-box">
+              <img class="thumb"
+                   src="images/charbench1.png"
+                   alt="CharBench thumbnail"
+                   width="280" height="280" loading="lazy" decoding="async" />
+            </div>
+            <div>
+              <div class="p-title">CharBench: Evaluating the Role of Tokenization in Character-Level Tasks</div>
+              <br>
+              <div class="authors"><strong>Omri Uzan</strong>, Yuval Pinter</div>
+              <div class="venue"><em>Preprint</em>, 2025</div>
+              <div class="links">
+                <a class="link" href="https://arxiv.org/abs/2508.02591/" target="_blank" rel="noopener">
+                  <svg class="icon" aria-hidden="true"><use href="#i-paper" xlink:href="#i-paper"></use></svg>
+                  <span>paper</span>
                 </a>
-                <br>
-                <strong>Omri Uzan,</strong> Yuval Pinter
-                <br>
-                <em>Preprint</em>, 2025
-                <br>
-                <br>
-                
-              </td>
-            </tr>
-        <tr>
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <div class="one">
-          <img src='images/tokenization_is_more.png' width="160">
-        </div>
-      </td>
-      <td style="padding:20px;width:75%;vertical-align:middle">
-        <a href="https://arxiv.org/abs/2402.18376/" target="_blank">
-			<span class="papertitle">Tokenization Is More Than Compression
-</span>
-        </a>
-        <br>
-        Craig W. Schmidt, Varshini Reddy, Haoran Zhang, Alec Alameddine, <strong>Omri Uzan,</strong> Yuval Pinter, Chris Tanner
-        <br>
-        <em>EMNLP</em>, 2024 &nbsp <strong>(Oral)</strong>
-        <br>
-        <br>
-        
-      </td>
-    </tr>
+                <a class="link" href="https://github.com/omriuz/CharBench" target="_blank" rel="noopener">
+                  <svg class="icon" aria-hidden="true" style="color:#181717">
+                    <use href="#i-github" xlink:href="#i-github"></use>
+                  </svg>
+                  <span>code</span>
+                </a>
+                <a class="link icon" href="https://huggingface.co/datasets/omriuz/CharBench" target="_blank" rel="noopener"><span class="emoji" aria-hidden="true">🤗</span><span>data</span></a>
+              </div>
+            </div>
+          </li>
+        </ul>
 
-    <tr>
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <div class="one">
-          <img src='images/Greed_is_all.png' width="160" height="160">
-        </div>
-      </td>
-      <td style="padding:20px;width:75%;vertical-align:middle">
-        <a href="https://arxiv.org/abs/2403.01289" target="_blank">
-      <span class="papertitle">Greed is All You Need: An Evaluation of Tokenizer Inference Methods
-</span>
-        </a>
-        <br>
-         <strong>Omri Uzan, </strong>Craig W.Schmidt, Chris Tanner, Yuval Pinter
-        <br>
-        <em>ACL</em>, 2024 &nbsp <strong>(Oral)</strong>
-        <br>
-        <br>
-        <font color="green"><strong>Outstanding Paper Award</strong></font>
-        <br>
-        <font color="green"><strong>Senior Area Chair Paper Award</strong></font>
-        <br>
-        
-      </td>
-    </tr>
+        <h3 class="muted">2024</h3>
+        <ul class="publist">
+          <li>
+            <div class="thumb-box">
+              <img class="thumb"
+                   src="images/Greed_is_all.png"
+                   alt="Greed is All You Need thumbnail"
+                   width="280" height="280" loading="lazy" decoding="async" />
+            </div>
+            <div>
+              <div class="p-title">Greed is All You Need: An Evaluation of Tokenizer Inference Methods</div>
+              <br>
+              <div class="authors"><strong>Omri Uzan</strong>, Craig W. Schmidt, Chris Tanner, Yuval Pinter</div>
+              <div class="venue"><em>ACL</em>, 2024 <span class="tag tag-oral">Oral</span> <span class="tag tag-award">Outstanding Paper Award</span> <span class="tag tag-award">Senior Area Chair Award</span></div>
+              <div class="links">
+                <a class="link icon" href="https://aclanthology.org/2024.acl-short.73/" target="_blank" rel="noopener"><svg class="icon"><use href="#i-paper"></use></svg><span>paper</span></a>
+                <a class="link" href="https://github.com/MeLeLBGU/tokenizers_intrinsic_benchmark" target="_blank" rel="noopener">
+                  <svg class="icon" aria-hidden="true" style="color:#181717">
+                    <use href="#i-github" xlink:href="#i-github"></use>
+                  </svg>
+                  <span>code</span>
+                </a>
+              </div>
+            </div>
+          </li>
 
-                
+          <li>
+            <div class="thumb-box">
+              <img class="thumb"
+                   src="images/tokenization_is_more.png"
+                   alt="Tokenization Is More Than Compression thumbnail"
+                   width="280" height="280" loading="lazy" decoding="async" />
+            </div>
+            <div>
+              <div class="p-title">Tokenization Is More Than Compression</div>
+              <div class="authors">Craig W. Schmidt, Varshini Reddy, Haoran Zhang, Alec Alameddine, <strong>Omri Uzan</strong>, Yuval Pinter, Chris Tanner</div>
+              <div class="venue"><em>EMNLP</em>, 2024 <span class="tag tag-oral">Oral</span></div>
+              <div class="links">
+                <a class="link icon" href="https://aclanthology.org/2024.emnlp-main.40/" target="_blank" rel="noopener"><svg class="icon"><use href="#i-paper"></use></svg><span>paper</span></a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
 
-            <!-- <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-              <tr>
-                <td>
-                  <h2>News</h2>
-                  <p>
-                    04.25 - I will be starting my Ph.D. at <a href="https://nlp.stanford.edu/">Stanford NLP</a> in September 2025.
-                    <br> 
-                    <br>
-                    04.25 - I will be joining IBM Research for a summer internship from June to September 2025.
-                    <br> 
-                    <br>
-                    01.25 - Giving a talk on 'Greed is All You Need: An Evaluation of Tokenizer Inference Methods' at <a href="https://www.linkedin.com/posts/activity-7287943839598678017-IwsH?utm_source=share&utm_medium=member_desktop">NLP-IL Journal Club.</a>
-                    <br>
-                    <br>  
-                    09.24 - Tokenization Is More Than Compression was accepted to EMNLP 2024 main with an oral presentation.
-                    <br>
-                    <br>
-                    08.24 - Greed is All You Need: An Evaluation of Tokenizer Inference Methods, received both an outstanding paper award and a senior area chair award at ACL 2024! 🏆
-                    <br>
-                    <br>
-                    05.24 - Greed is All You Need: An Evaluation of Tokenizer Inference Methods accepted to ACL 2024 main! 
-
-                  </p>
-                </td>
-              </tr>
-            </tbody></table> -->
-
-
-          
-          <!-- <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-            <tr>
-              <td>
-                <h2>Personal</h2>
-                <p>
-                  I'm a huge Anime and Manga fan and really enjoy reading fantasy 🧙‍♂️📚
-                  <br>
-                  I love travelling, especially with my dog.
-                  <br> 
-                </p>
-              </td>
-            </tr>
-          </tbody></table> -->
-          <table>
-          <p style="text-align:right; font-size:small;">
-            This website is based on Jon Barron's <a href="https://jonbarron.info/">website</a>.
-          </p>
-        </table>
-  </body>
+      <!-- <section id="news">
+        <h2>News</h2>
+        <ul class="news">
+          <li><time datetime="2025-09">Sep 2025</time> Project pages refreshed, added high-res figures for GQR and CharBench.</li>
+          <li><time datetime="2025-08">Aug 2025</time> CharBench preprint is online.</li>
+          <li><time datetime="2025-02">Feb 2025</time> Started the Ph.D. in Computer Science at Stanford University.</li>
+          <li><time datetime="2024-08">Aug 2024</time> ACL Outstanding Paper for <em>Greed is All You Need</em>.</li>
+          <li><time datetime="2024-02">Feb 2024</time> <em>Tokenization Is More Than Compression</em> at EMNLP (Oral).</li>
+          <li><time datetime="2024-02">Feb 2024</time> <em>Tokenization Is More Than Compression</em> at EMNLP (Oral).</li>
+        </ul>
+      </section> -->
+    </main>
+  </div>
+</body>
 </html>
