@@ -137,20 +137,28 @@
     .publist { list-style: none; padding: 0; margin: 4px 0 0; }
     .publist li {
       display: grid;
-      grid-template-columns: 140px 1fr; /* was 112px */
+      grid-template-columns: auto 1fr;
+      align-items: center;
       gap: 18px;
       padding: 18px 0; /* slightly larger row height */
       border-bottom: 1px solid var(--border);
     }
     .thumb-box {
-      width: 140px;  /* was 112px */
-      height: 140px; /* was 112px */
+      width: fit-content;
+      height: fit-content;
+      max-width: 140px;
+      max-height: 140px;
       border-radius: 12px; /* slightly bigger rounding */
-      overflow: hidden;
       border: 1px solid var(--border);
       background: #fff;
     }
-    .thumb { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .thumb {
+      width: auto;
+      height: auto;
+      max-width: 140px;
+      max-height: 140px;
+      display: block;
+    }
     .p-title { font-weight: 650; }
     .authors { margin-top: 2px; }
     .venue { margin-top: 2px; font-weight: 600; }
@@ -175,8 +183,9 @@
     /* Mobile */
     @media (max-width: 880px) {
       .wrap { grid-template-columns: 1fr; }
-      .publist li { grid-template-columns: 96px 1fr; } /* was 80px */
-      .thumb-box { width: 96px; height: 96px; }       /* was 80px */
+      .publist li { grid-template-columns: auto 1fr; }
+      .thumb-box { max-width: 96px; max-height: 96px; }
+      .thumb { max-width: 96px; max-height: 96px; }
     }
 
     /* Photo wrapper + slight left shift (unchanged) */
@@ -294,7 +303,7 @@
   <div class="wrap" itemscope itemtype="https://schema.org/Person">
     <aside>
       <!-- <div class="photo-wrap">
-        <img class="photo" src="images/profile.jpeg"
+        <img class="photo" src="images/profile.png"
              alt="Portrait of Omri Uzan" itemprop="image"
              width="560" height="560" loading="eager" decoding="async" fetchpriority="high"/>
       </div> -->
@@ -333,8 +342,8 @@
           Nowadays I mostly think about how to better decouple knowledge from capabilities in language models. Can we build smaller models that don't memorize half the internet, yet can reason and perform complex tasks?
           I am also interested in multimodal representaion learning, and in principled and effective methods to contexualize models with external information.     </p>
         <p> -->
-          Before Stanford, I was working as an engineer at Meta.<br>
-          I completed my B.Sc. and M.Sc. in Computer Science at Ben-Gurion University, where I worked on evaluation of tokenization algorithms for language models.
+          Before Stanford, I was working as an engineer at Meta.
+          I completed my B.Sc. and M.Sc. in Computer Science at Ben-Gurion University.
         </p>
         <p>
           Feel free to reach out!
@@ -346,6 +355,34 @@
 
         <!-- <h3 class="muted">2025</h3> -->
         <ul class="publist">
+
+          <li>
+            <div class="thumb-box">
+              <img class="thumb"
+                   src="images/doc-opt.png"
+                   alt="Guided Query Refinement thumbnail"
+                   width="280" height="280" loading="lazy" decoding="async" />
+            </div>
+            <div>
+              <div class="p-title">Document Optimization for Black-Box Retrieval via Reinforcement Learning</div>
+              <br>
+              <div class="authors"><strong>Omri Uzan</strong>, Ron Polonsky, Douwe Kiela, Christopher Potts</div>
+              <div class="venue"><em>arXiv</em></div>
+              <div class="links">
+                <a class="link" href="https://arxiv.org/abs/2604.05087" target="_blank" rel="noopener">
+                  <svg class="icon" aria-hidden="true"><use href="#i-paper" xlink:href="#i-paper"></use></svg>
+                  <span>paper</span>
+                </a>
+                <!-- <a class="link" href="https://github.com/IBM/test-time-hybrid-retrieval" target="_blank" rel="noopener">
+                  <svg class="icon" aria-hidden="true" style="color:#181717">
+                    <use href="#i-github" xlink:href="#i-github"></use>
+                  </svg>
+                  <span>code</span>
+                </a> -->
+              </div>
+            </div>
+          </li>
+
           <li>
             <div class="thumb-box">
               <img class="thumb"
@@ -375,7 +412,6 @@
                   <svg class="icon" aria-hidden="true"><use href="#i-globe" xlink:href="#i-globe"></use></svg>
                   <span>project</span>
                 </a>
-                <!-- <a class="link icon" href="https://huggingface.co/datasets/omriuz/GQR" target="_blank" rel="noopener"><span class="emoji" aria-hidden="true">🤗</span><span>data</span></a> -->
               </div>
             </div>
           </li>
