@@ -26,282 +26,161 @@
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png" />
   <link rel="shortcut icon" href="images/favicon/favicon.ico" />
 
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <!-- Inline SVG sprite (kept for left-side logos and paper icon) -->
-   <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+  <!-- Inline SVG sprite (used for footer social icons) -->
+  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     style="position:absolute;width:0;height:0;overflow:hidden">
-    <!-- GitHub -->
     <symbol id="i-github" viewBox="0 0 16 16">
       <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
     </symbol>
-    <!-- Globe/Website -->
-<symbol id="i-globe" viewBox="0 0 24 24">
-  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
-  <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="currentColor" stroke-width="2" fill="none"/>
-</symbol>
-    <!-- X -->
-    <symbol id="i-x" viewBox="0 0 24 24">
-      <path d="M3 3l18 18M21 3 3 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-    </symbol>
-    <!-- LinkedIn -->
     <symbol id="i-linkedin" viewBox="0 0 24 24">
       <path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 0 0 5.001 2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM10 9h3.8v1.8h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.09V21h-4v-5.3c0-1.26-.02-2.88-1.76-2.88-1.76 0-2.03 1.37-2.03 2.78V21h-4z"/>
-    </symbol>
-    <!-- Scholar (book) -->
-    <symbol id="i-scholar" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 1-2-2V5zm2 0v12h10V5H6zm-2 14h14v2H4z"/>
-    </symbol>
-    <!-- Paper (document) -->
-    <symbol id="i-paper" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12V8l-4-6zm0 2 2.5 3H14V4zM7 9h7v2H7V9zm0 4h10v2H7v-2zm0 4h10v2H7v-2z"/>
     </symbol>
     <symbol id="i-x-logo" viewBox="0 0 24 24">
       <path fill="currentColor" d="M2.7 2h5.1l4.5 6.1L17.8 2h3.5l-7 8.7L22 22h-5.1l-4.9-6.6L6 22H2.5l7.5-9.3L2.7 2z"/>
     </symbol>
-
-    <symbol id="i-google" viewBox="0 0 24 24">
-      <path fill="#4285F4" d="M23.49 12.27c0-.85-.08-1.67-.24-2.45H12v4.64h6.44c-.28 1.5-1.1 2.77-2.34 3.62v3h3.78c2.21-2.04 3.61-5.04 3.61-8.81z"/>
-      <path fill="#34A853" d="M12 24c3.24 0 5.96-1.08 7.95-2.92l-3.78-3c-1.05.7-2.39 1.12-4.17 1.12-3.21 0-5.94-2.16-6.92-5.06H1.2v3.18C3.18 21.53 7.26 24 12 24z"/>
-      <path fill="#FBBC05" d="M5.08 14.14c-.24-.7-.38-1.46-.38-2.24s.14-1.54.38-2.24V6.48H1.2C.44 8.02 0 9.76 0 11.9s.44 3.88 1.2 5.42l3.88-3.18z"/>
-      <path fill="#EA4335" d="M12 4.74c1.76 0 3.34.6 4.59 1.78l3.43-3.43C17.95 1.14 15.24 0 12 0 7.26 0 3.18 2.47 1.2 6.48l3.88 3.18C6.06 6.74 8.79 4.74 12 4.74z"/>
-    </symbol>
-
     <symbol id="i-gscholar-hat" viewBox="0 0 24 24">
-      <!-- cap -->
       <path fill="currentColor" d="M12 3 1.5 9 12 15 22.5 9 12 3z"/>
-      <!-- tassel string -->
       <path d="M19.5 10.2V14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-      <!-- tassel -->
       <circle cx="19.5" cy="16" r="1.2" fill="currentColor"/>
-      <!-- base (head band) -->
       <path fill="currentColor" d="M6.5 12.6V16c0 1.9 3 3.5 5.5 3.5S17.5 17.9 17.5 16v-3.4L12 15.7l-5.5-3.1z"/>
     </symbol>
-
   </svg>
 
-  <div class="nav-wrap">
-    <nav class="topnav">
-      <a href="index.html">About</a>
-      <a href="research.html" aria-current="page">Research</a>
-    </nav>
-  </div>
+  <div class="container">
+    <header class="site-header">
+      <nav class="topnav">
+        <a href="index.html">About</a>
+        <a href="research.html" aria-current="page">Research</a>
+      </nav>
+    </header>
 
-  <div class="wrap" itemscope itemtype="https://schema.org/Person">
-    <aside>
-      <h1 itemprop="name">Omri Uzan</h1>
-      <div class="role">Ph.D. student, Stanford University</div>
-      <div class="contact" itemprop="contactPoint" itemscope itemtype="https://schema.org/ContactPoint">
-        <div>Email: uzan [at] stanford.edu </div>
-      </div>
-      <div class="social">
-        <a class="chip" href="https://x.com/omri_uzan/" target="_blank" rel="noopener" aria-label="X">
-          <svg class="icon" aria-hidden="true"><use href="#i-x-logo" xlink:href="#i-x-logo"></use></svg>
-        </a>
-        <a class="chip" href="https://scholar.google.co.il/citations?user=uJvNbkYAAAAJ&hl=en"
-        target="_blank" rel="noopener" aria-label="Google Scholar">
-       <svg class="icon" aria-hidden="true">
-         <use href="#i-gscholar-hat" xlink:href="#i-gscholar-hat"></use>
-       </svg>
-     </a>
-        <a class="chip" href="https://github.com/omriuz/" target="_blank" rel="noopener" aria-label="GitHub">
-          <svg class="icon" aria-hidden="true"><use href="#i-github" xlink:href="#i-github"></use></svg>
-        </a>
-        <a class="chip" href="https://www.linkedin.com/in/omri-uzan-64a6021b0/" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <svg class="icon" aria-hidden="true"><use href="#i-linkedin" xlink:href="#i-linkedin"></use></svg>
-        </a>
-      </div>
+    <div class="intro">
+      <a href="https://scholar.google.co.il/citations?user=uJvNbkYAAAAJ&hl=en">Google Scholar</a><br />
+    </div>
 
-    </aside>
 
     <main>
-      <section id="publications">
-        <div class="section-head">
-          <h2 id="papers-heading">Papers</h2>
-          <div class="toggle-wrap">
-            <label class="toggle-switch" aria-label="Toggle between selected papers and all papers">
-              <input class="toggle-input" id="papers-toggle" type="checkbox" aria-controls="publications" checked />
-              <span class="toggle-slider"></span>
-            </label>
-            <span class="toggle-state" id="papers-toggle-label">Selected</span>
+      <h2 id="preprints" class="page-heading">Preprints</h2>
+
+      <div class="publist">
+        <div class="row">
+          <div>
+            <img src="images/doc-opt.png" alt="Document Optimization thumbnail" />
+          </div>
+          <div>
+            <div class="p-title">Document Optimization for Black-Box Retrieval via Reinforcement Learning</div>
+            <div class="authors"><strong>Omri Uzan</strong>, Ron Polonsky, Douwe Kiela, Christopher Potts</div>
+            <div class="venue"><em>arXiv</em></div>
+            <p class="desc">We fine-tune LMs with RL to rewrite documents into better representations for a target black-box retriever, allowing smaller retrievers to match or beat larger retrievers on code and visual document retrieval tasks.</p>
+            <div class="links-row">
+              <a href="https://arxiv.org/abs/2604.05087" target="_blank" rel="noopener">ArXiv</a>
+              <a href="https://github.com/omriuz/doc-opt" target="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="publications" class="page-heading">Selected Publications</h2>
+
+      <div class="publist">
+        <div class="row">
+          <div>
+            <img src="images/GQR.png" alt="Guided Query Refinement thumbnail" />
+          </div>
+          <div>
+            <div class="p-title">Guided Query Refinement: Multimodal Hybrid Retrieval with Test-Time Optimization</div>
+            <div class="authors"><strong>Omri Uzan</strong>, Asaf Yehudai, Roi Pony, Eyal Shnarch, Ariel Gera</div>
+            <div class="venue"><em>ICLR-26</em></div>
+            <p class="desc">GQR refines a primary retriever's query embedding at test time using guidance from a lightweight auxiliary retriever of a different modality, matching larger models while being up to 14x faster and 54x lighter.</p>
+            <div class="links-row">
+              <a href="https://arxiv.org/abs/2510.05038/" target="_blank" rel="noopener">ArXiv</a>
+              <a href="https://github.com/IBM/test-time-hybrid-retrieval" target="_blank" rel="noopener">Code</a>
+              <a href="https://omriuz.github.io/gqr/" target="_blank" rel="noopener">Website</a>
+            </div>
           </div>
         </div>
 
-        <h3 class="muted">2026</h3>
-        <ul class="publist">
-          <li>
-            <div class="thumb-box">
-              <img class="thumb"
-                   src="images/doc-opt.png"
-                   alt="Document Optimization thumbnail"
-                   width="280" height="280" loading="lazy" decoding="async" />
+        <div class="row">
+          <div>
+            <img src="images/charbench1.png" alt="CharBench thumbnail" />
+          </div>
+          <div>
+            <div class="p-title">CharBench: Evaluating the Role of Tokenization in Character-Level Tasks</div>
+            <div class="authors"><strong>Omri Uzan</strong>, Yuval Pinter</div>
+            <div class="venue"><em>AAAI-26</em> <span class="tag-red">(Oral)</span></div>
+            <p class="desc">We study character-level tasks in LMs and the effect of subword tokenization. We find that tokenization features are not correlated with performance on many character-level tasks, contrary to the common perception. We publish a benchmark for future work and reproduction.</p>
+            <div class="links-row">
+              <a href="https://arxiv.org/abs/2508.02591/" target="_blank" rel="noopener">ArXiv</a>
+              <a href="https://huggingface.co/datasets/omriuz/CharBench" target="_blank" rel="noopener">Benchmark</a>
             </div>
-            <div>
-              <div class="p-title">Document Optimization for Black-Box Retrieval via Reinforcement Learning</div>
-              <br>
-              <div class="authors"><strong>Omri Uzan</strong>, Ron Polonsky, Douwe Kiela, Christopher Potts</div>
-              <div class="venue"><em>arXiv</em></div>
-              <div class="links">
-                <a class="link" href="https://arxiv.org/abs/2604.05087" target="_blank" rel="noopener">
-                  <svg class="icon" aria-hidden="true"><use href="#i-paper" xlink:href="#i-paper"></use></svg>
-                  <span>paper</span>
-                </a>
-                <a class="link" href="https://github.com/omriuz/doc-opt" target="_blank" rel="noopener">
-                  <svg class="icon" aria-hidden="true" style="color:#181717">
-                    <use href="#i-github" xlink:href="#i-github"></use>
-                  </svg>
-                  <span>code</span>
-                </a>
-              </div>
-            </div>
-          </li>
-        </ul>
+          </div>
+        </div>
 
-        <h3 class="muted">2025</h3>
-        <ul class="publist">
-          <li>
-            <div class="thumb-box">
-              <img class="thumb"
-                   src="images/GQR.png"
-                   alt="Guided Query Refinement thumbnail"
-                   width="280" height="280" loading="lazy" decoding="async" />
+        <div class="row">
+          <div>
+            <img src="images/Greed_is_all.png" alt="Greed is All You Need thumbnail" />
+          </div>
+          <div>
+            <div class="p-title">Greed is All You Need: An Evaluation of Tokenizer Inference Methods</div>
+            <div class="authors"><strong>Omri Uzan</strong>, Craig W. Schmidt, Chris Tanner, Yuval Pinter</div>
+            <div class="venue"><em>ACL-24</em> <span class="tag-red">(Oral, Outstanding Paper Award, Senior Area Chair Award)</span></div>
+            <p class="desc">We show that for many subword tokenizers, vocabulary construction and tokenization inference are separable components. Using a new intrinsic benchmark, we evaluate popular tokenizers and find that simple greedy inference performs surprisingly well across tokenization algorithms.</p>
+            <div class="links-row">
+              <a href="https://aclanthology.org/2024.acl-short.73/" target="_blank" rel="noopener">Paper</a>
+              <a href="https://github.com/MeLeLBGU/tokenizers_intrinsic_benchmark" target="_blank" rel="noopener">Code</a>
             </div>
-            <div>
-              <div class="p-title">Guided Query Refinement: Multimodal Hybrid Retrieval with Test-Time Optimization</div>
-              <br>
-              <div class="authors"><strong>Omri Uzan</strong>, Asaf Yehudai, Roi Pony, Eyal Shnarch, Ariel Gera</div>
-              <div class="venue"><em>ICLR-26</em></div>
-              <div class="links">
-                <a class="link" href="https://arxiv.org/abs/2510.05038/" target="_blank" rel="noopener">
-                  <svg class="icon" aria-hidden="true"><use href="#i-paper" xlink:href="#i-paper"></use></svg>
-                  <span>paper</span>
-                </a>
-                <a class="link" href="https://github.com/IBM/test-time-hybrid-retrieval" target="_blank" rel="noopener">
-                  <svg class="icon" aria-hidden="true" style="color:#181717">
-                    <use href="#i-github" xlink:href="#i-github"></use>
-                  </svg>
-                  <span>code</span>
-                </a>
-                <a class="link" href="https://omriuz.github.io/gqr/" target="_blank" rel="noopener">
-                  <svg class="icon" aria-hidden="true"><use href="#i-globe" xlink:href="#i-globe"></use></svg>
-                  <span>project</span>
-                </a>
-              </div>
-            </div>
-          </li>
+          </div>
+        </div>
 
-          <li class="all-only">
-            <div class="thumb-box">
-              <img class="thumb"
-                   src="images/charbench1.png"
-                   alt="CharBench thumbnail"
-                   width="280" height="280" loading="lazy" decoding="async" />
+        <div class="row">
+          <div>
+            <img src="images/tokenization_is_more.png" alt="Tokenization Is More Than Compression thumbnail" />
+          </div>
+          <div>
+            <div class="p-title">Tokenization Is More Than Compression</div>
+            <div class="authors">Craig W. Schmidt, Varshini Reddy, Haoran Zhang, Alec Alameddine, <strong>Omri Uzan</strong>, Yuval Pinter, Chris Tanner</div>
+            <div class="venue"><em>EMNLP-24</em> <span class="tag-red">(Oral)</span></div>
+            <p class="desc">Introduces PathPiece, a tokenizer that minimizes token count, and uses it to show empirically that fewer tokens do not necessarily lead to better language models. The results suggest that pre-tokenization and vocabulary construction often matter more than compression rate alone.</p>
+            <div class="links-row">
+              <a href="https://aclanthology.org/2024.emnlp-main.40/" target="_blank" rel="noopener">Paper</a>
             </div>
-            <div>
-              <div class="p-title">CharBench: Evaluating the Role of Tokenization in Character-Level Tasks</div>
-              <br>
-              <div class="authors"><strong>Omri Uzan</strong>, Yuval Pinter</div>
-              <div class="venue"><em>AAAI-26</em> <span class="tag tag-oral">Oral</span></div>
-              <div class="links">
-                <a class="link" href="https://arxiv.org/abs/2508.02591/" target="_blank" rel="noopener">
-                  <svg class="icon" aria-hidden="true"><use href="#i-paper" xlink:href="#i-paper"></use></svg>
-                  <span>paper</span>
-                </a>
-                <a class="link icon" href="https://huggingface.co/datasets/omriuz/CharBench" target="_blank" rel="noopener"><span class="emoji" aria-hidden="true">🤗</span><span>benchmark</span></a>
-              </div>
-            </div>
-          </li>
-        </ul>
-
-        <h3 class="muted">2024</h3>
-        <ul class="publist">
-          <li class="all-only">
-            <div class="thumb-box">
-              <img class="thumb"
-                   src="images/tokenization_is_more.png"
-                   alt="Tokenization Is More Than Compression thumbnail"
-                   width="280" height="280" loading="lazy" decoding="async" />
-            </div>
-            <div>
-              <div class="p-title">Tokenization Is More Than Compression</div>
-              <br>
-              <div class="authors">Craig W. Schmidt, Varshini Reddy, Haoran Zhang, Alec Alameddine, <strong>Omri Uzan</strong>, Yuval Pinter, Chris Tanner</div>
-              <div class="venue"><em>EMNLP-24</em> <span class="tag tag-oral">Oral</span></div>
-              <div class="links">
-                <a class="link icon" href="https://aclanthology.org/2024.emnlp-main.40/" target="_blank" rel="noopener"><svg class="icon"><use href="#i-paper"></use></svg><span>paper</span></a>
-              </div>
-            </div>
-          </li>
-
-          <li>
-            <div class="thumb-box">
-              <img class="thumb"
-                   src="images/Greed_is_all.png"
-                   alt="Greed is All You Need thumbnail"
-                   width="280" height="280" loading="lazy" decoding="async" />
-            </div>
-            <div>
-              <div class="p-title">Greed is All You Need: An Evaluation of Tokenizer Inference Methods</div>
-              <br>
-              <div class="authors"><strong>Omri Uzan</strong>, Craig W. Schmidt, Chris Tanner, Yuval Pinter</div>
-              <div class="venue"><em>ACL-24</em> <span class="tag tag-oral">Oral</span> <span class="tag tag-award">Outstanding Paper Award</span> <span class="tag tag-award">Senior Area Chair Award</span></div>
-              <div class="links">
-                <a class="link icon" href="https://aclanthology.org/2024.acl-short.73/" target="_blank" rel="noopener"><svg class="icon"><use href="#i-paper"></use></svg><span>paper</span></a>
-                <a class="link" href="https://github.com/MeLeLBGU/tokenizers_intrinsic_benchmark" target="_blank" rel="noopener">
-                  <svg class="icon" aria-hidden="true" style="color:#181717">
-                    <use href="#i-github" xlink:href="#i-github"></use>
-                  </svg>
-                  <span>code</span>
-                </a>
-              </div>
-            </div>
-          </li>
-
-          <li class="all-only">
-            <div class="thumb-box">
-              <img class="thumb"
-                   src="images/alien_subword.png"
-                   alt="Evaluating Subword Tokenization thumbnail"
-                   width="280" height="280" loading="lazy" decoding="async" />
-            </div>
-            <div>
-              <div class="p-title">Evaluating Subword Tokenization: Alien Subword Composition and OOV Generalization Challenge</div>
-              <br>
-              <div class="authors">Khuyagbaatar Batsuren, Ekaterina Vylomova, Verna Dankers, Tsetsuukhei Delgerbaatar, <strong>Omri Uzan</strong>, Yuval Pinter, Gábor Bella</div>
-              <div class="venue"><em>arXiv</em></div>
-              <div class="links">
-                <a class="link" href="https://arxiv.org/abs/2404.13292" target="_blank" rel="noopener">
-                  <svg class="icon" aria-hidden="true"><use href="#i-paper" xlink:href="#i-paper"></use></svg>
-                  <span>paper</span>
-                </a>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </section>
+          </div>
+        </div>
+      </div>
     </main>
+
+    <footer class="site-footer">
+      <div class="footer-row">
+        <div class="social-links">
+          <a href="https://x.com/omri_uzan/" target="_blank" rel="noopener" aria-label="X">
+            <svg aria-hidden="true"><use href="#i-x-logo" xlink:href="#i-x-logo"></use></svg> omri_uzan
+          </a>
+          <a href="https://github.com/omriuz/" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg aria-hidden="true"><use href="#i-github" xlink:href="#i-github"></use></svg> omriuz
+          </a>
+          <a href="https://www.linkedin.com/in/omri-uzan-64a6021b0/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg aria-hidden="true"><use href="#i-linkedin" xlink:href="#i-linkedin"></use></svg> omri-uzan
+          </a>
+          <a href="https://scholar.google.co.il/citations?user=uJvNbkYAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar">
+            <svg aria-hidden="true"><use href="#i-gscholar-hat" xlink:href="#i-gscholar-hat"></use></svg> Scholar
+          </a>
+        </div>
+        <div class="site-description">
+          <a href="mailto:uzan@stanford.edu">uzan [at] stanford.edu</a>
+        </div>
+      </div>
+    </footer>
   </div>
-<script type="text/javascript">
-  var sc_project=13174280;
-  var sc_invisible=1;
-  var sc_security="57d4ffdf";
-  </script>
-  <script>
-    const papersToggle = document.getElementById('papers-toggle');
-    const papersSection = document.getElementById('publications');
-    const papersToggleLabel = document.getElementById('papers-toggle-label');
 
-    const syncPapersView = () => {
-      const showingSelected = papersToggle.checked;
-      papersSection.classList.toggle('show-all', !showingSelected);
-      papersToggleLabel.textContent = showingSelected ? 'Selected' : 'All';
-    };
-
-    syncPapersView();
-    papersToggle.addEventListener('change', syncPapersView);
+  <script type="text/javascript">
+    var sc_project=13174280;
+    var sc_invisible=1;
+    var sc_security="57d4ffdf";
   </script>
   <script type="text/javascript"
   src="https://www.statcounter.com/counter/counter.js" async></script>
